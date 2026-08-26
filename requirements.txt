@@ -1,0 +1,311 @@
+# ============================================================
+# IFTUBE - YouTube Metadata & OSINT Scanner
+# Complete Requirements File
+# Owner: Raj Gautam
+# GitHub: https://github.com/Rg100152/iftube
+# ============================================================
+
+# ============================================================
+# CORE DEPENDENCIES (Required)
+# ============================================================
+
+# HTTP requests library for fetching YouTube pages
+# Version: 2.28.0+ (Stable)
+requests>=2.28.0,<3.0.0
+
+# HTML parsing and XML manipulation
+# Used for extracting metadata from YouTube page structure
+beautifulsoup4>=4.11.0,<5.0.0
+
+# YouTube metadata extraction - supports all YouTube formats
+# Including: Watch, Shorts, Live, Embed, Music
+yt-dlp>=2023.12.30,<2024.0.0
+
+# Formatted table output for terminal display
+tabulate>=0.9.0,<1.0.0
+
+# ============================================================
+# PARSING & UTILITY LIBRARIES
+# ============================================================
+
+# Advanced HTML parsing support
+lxml>=4.9.0,<5.0.0
+
+# For handling JSON-LD and other JSON data
+simplejson>=3.18.0,<4.0.0
+
+# Date/time parsing enhancements
+python-dateutil>=2.8.2,<3.0.0
+
+# URL parsing and validation
+urllib3>=1.26.0,<2.0.0
+
+# For handling character encodings
+chardet>=5.0.0,<6.0.0
+
+# ============================================================
+# NETWORK & PROXY SUPPORT
+# ============================================================
+
+# SOCKS proxy support for advanced networking
+PySocks>=1.7.1,<2.0.0
+
+# HTTP/2 support for faster requests
+h2>=4.0.0,<5.0.0
+
+# Connection pooling and retry logic
+urllib3[socks]>=1.26.0,<2.0.0
+
+# Asynchronous HTTP for parallel scanning (optional)
+aiohttp>=3.8.0,<4.0.0
+aiodns>=3.0.0,<4.0.0
+
+# ============================================================
+# DATA PROCESSING & ANALYSIS
+# ============================================================
+
+# For advanced data manipulation
+pandas>=1.5.0,<2.0.0
+
+# Numerical operations for analytics
+numpy>=1.23.0,<2.0.0
+
+# Natural language processing for keyword analysis
+nltk>=3.8.0,<4.0.0
+
+# Text processing and cleaning
+textblob>=0.17.0,<1.0.0
+
+# For sentiment analysis of titles/descriptions
+vaderSentiment>=3.3.2,<4.0.0
+
+# ============================================================
+# REPORT GENERATION & OUTPUT
+# ============================================================
+
+# PDF report generation
+reportlab>=4.0.0,<5.0.0
+
+# Excel export support
+openpyxl>=3.1.0,<4.0.0
+
+# CSV and data export
+csvkit>=1.0.0,<2.0.0
+
+# HTML report generation
+jinja2>=3.0.0,<4.0.0
+
+# ============================================================
+# TERMINAL & VISUAL ENHANCEMENTS
+# ============================================================
+
+# Rich terminal output with formatting
+rich>=13.0.0,<14.0.0
+
+# Progress bars for long operations
+tqdm>=4.65.0,<5.0.0
+
+# Colorful terminal output (alternative)
+colorama>=0.4.6,<1.0.0
+
+# Terminal styling and emoji support
+emoji>=2.0.0,<3.0.0
+
+# ============================================================
+# CACHING & PERFORMANCE
+# ============================================================
+
+# Caching HTTP responses
+cachetools>=5.0.0,<6.0.0
+
+# Disk-based caching
+diskcache>=5.0.0,<6.0.0
+
+# LRU caching
+functools-lru-cache>=1.0.0,<2.0.0
+
+# ============================================================
+# SECURITY & ENCRYPTION
+# ============================================================
+
+# TLS/SSL certificate handling
+certifi>=2022.12.0,<2024.0.0
+
+# Secure random token generation
+cryptography>=39.0.0,<40.0.0
+
+# Environment variable management
+python-dotenv>=1.0.0,<2.0.0
+
+# ============================================================
+# DATABASE & STORAGE (Optional)
+# ============================================================
+
+# SQLite database support
+sqlite3-fts4>=1.0.0,<2.0.0
+
+# Simple key-value storage
+tinydb>=4.7.0,<5.0.0
+
+# JSON database
+json-database>=0.1.0,<0.2.0
+
+# ============================================================
+# LOGGING & DEBUGGING
+# ============================================================
+
+# Enhanced logging
+loguru>=0.7.0,<1.0.0
+
+# Debug and profiling
+memory-profiler>=0.61.0,<1.0.0
+
+# Performance monitoring
+line-profiler>=4.0.0,<5.0.0
+
+# ============================================================
+# TESTING & DEVELOPMENT
+# ============================================================
+
+# Unit testing
+pytest>=7.0.0,<8.0.0
+pytest-cov>=4.0.0,<5.0.0
+pytest-xdist>=3.0.0,<4.0.0
+
+# Mocking and patching
+mock>=5.0.0,<6.0.0
+responses>=0.23.0,<1.0.0
+
+# Test data generation
+faker>=18.0.0,<19.0.0
+
+# ============================================================
+# CODE QUALITY
+# ============================================================
+
+# Code linting
+flake8>=6.0.0,<7.0.0
+pylint>=2.15.0,<3.0.0
+black>=23.0.0,<24.0.0
+isort>=5.12.0,<6.0.0
+
+# Type checking
+mypy>=1.0.0,<2.0.0
+types-requests>=2.28.0,<3.0.0
+types-beautifulsoup4>=4.11.0,<5.0.0
+
+# ============================================================
+# DOCUMENTATION
+# ============================================================
+
+# Documentation generation
+sphinx>=6.0.0,<7.0.0
+sphinx-rtd-theme>=1.2.0,<2.0.0
+myst-parser>=1.0.0,<2.0.0
+
+# ============================================================
+# CI/CD & DEPLOYMENT
+# ============================================================
+
+# Build tools
+setuptools>=65.0.0,<70.0.0
+wheel>=0.40.0,<1.0.0
+twine>=4.0.0,<5.0.0
+
+# ============================================================
+# GUI & WEB INTERFACE (Optional Extensions)
+# ============================================================
+
+# Flask web interface
+flask>=2.2.0,<3.0.0
+flask-cors>=3.0.0,<4.0.0
+
+# Desktop GUI
+PyQt5>=5.15.0,<6.0.0
+
+# Browser automation for advanced scraping
+selenium>=4.8.0,<5.0.0
+
+# ============================================================
+# CLOUD & API INTEGRATION
+# ============================================================
+
+# Google Cloud support
+google-api-python-client>=2.0.0,<3.0.0
+google-auth>=2.0.0,<3.0.0
+
+# AWS support
+boto3>=1.26.0,<2.0.0
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+# Configuration file parsing
+PyYAML>=6.0.0,<7.0.0
+tomli>=2.0.0,<3.0.0
+
+# ============================================================
+# MACHINE LEARNING (Advanced Analytics)
+# ============================================================
+
+# For content classification (optional)
+scikit-learn>=1.2.0,<2.0.0
+
+# ============================================================
+# NOTIFICATIONS & ALERTS
+# ============================================================
+
+# Email notifications
+yagmail>=0.15.0,<0.16.0
+
+# ============================================================
+# EXTRA UTILITIES
+# ============================================================
+
+# Human-readable file sizes
+humanize>=4.0.0,<5.0.0
+
+# Progress bar with eta
+tqdm>=4.65.0,<5.0.0
+
+# ============================================================
+# PLATFORM-SPECIFIC DEPENDENCIES
+# ============================================================
+
+# Windows-specific
+pywin32>=305,<306; sys_platform == 'win32'
+
+# MacOS-specific
+pyobjc-core>=9.0.0,<10.0.0; sys_platform == 'darwin'
+
+# Linux-specific
+dbus-python>=1.3.0,<2.0.0; sys_platform == 'linux'
+
+# ============================================================
+# FALLBACK & COMPATIBILITY
+# ============================================================
+
+# Python 3.6+ compatibility
+typing-extensions>=4.5.0,<5.0.0
+
+# Backport for modern features
+dataclasses>=0.6; python_version < '3.7'
+importlib-metadata>=5.0.0,<6.0.0; python_version < '3.8'
+
+# ============================================================
+# RECOMMENDED INSTALLATION
+# ============================================================
+# For production use (minimal):
+#   pip install -r requirements.txt --no-deps
+#   pip install requests beautifulsoup4 yt-dlp tabulate lxml
+#
+# For development (full):
+#   pip install -r requirements.txt
+#
+# For GUI version:
+#   pip install -r requirements.txt[gui]
+#
+# For web interface:
+#   pip install -r requirements.txt[web]
+# ============================================================
