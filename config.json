@@ -1,0 +1,339 @@
+{
+  "tool": {
+    "name": "IFTUBE",
+    "version": "1.0.0",
+    "owner": "Raj Gautam",
+    "github": "https://github.com/Rg100152/iftube",
+    "license": "MIT",
+    "description": "YouTube Metadata & OSINT Scanner"
+  },
+  "scan": {
+    "timeout": 30,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "parallel_requests": 5,
+    "cache_enabled": true,
+    "cache_expiry": 3600,
+    "max_page_size": 5242880,
+    "follow_redirects": true,
+    "verify_ssl": true
+  },
+  "metadata": {
+    "extract": {
+      "open_graph": true,
+      "json_ld": true,
+      "microdata": true,
+      "keywords": true,
+      "hashtags": true,
+      "external_links": true,
+      "thumbnails": true,
+      "comments": true,
+      "likes": true,
+      "views": true,
+      "duration": true,
+      "categories": true,
+      "tags": true,
+      "language": true,
+      "age_restriction": true,
+      "availability": true,
+      "channel_info": true,
+      "upload_date": true,
+      "description": true,
+      "title": true
+    },
+    "limit": {
+      "keywords": 20,
+      "hashtags": 30,
+      "external_links": 25,
+      "thumbnails": 10,
+      "comments": 100,
+      "tags": 50,
+      "categories": 10,
+      "related_videos": 20
+    }
+  },
+  "osint": {
+    "analysis": {
+      "keyword_density": true,
+      "sentiment_analysis": false,
+      "language_detection": true,
+      "region_detection": true,
+      "revenue_estimation": true,
+      "metadata_completeness": true,
+      "url_type_detection": true,
+      "video_id_validation": true,
+      "channel_verification": true,
+      "content_categorization": true
+    },
+    "revenue": {
+      "cpm_rate": 2.5,
+      "currency": "USD",
+      "avg_view_duration": 0.5,
+      "monetization_factor": 0.7,
+      "ad_revenue_factor": 0.6,
+      "membership_factor": 0.1,
+      "superchat_factor": 0.05
+    },
+    "regions": {
+      "enable_detection": true,
+      "fallback": "Unknown",
+      "language_map": {
+        "en": "United States/United Kingdom",
+        "hi": "India",
+        "es": "Spain/Latin America",
+        "fr": "France/Canada",
+        "de": "Germany",
+        "ja": "Japan",
+        "ko": "South Korea",
+        "pt": "Brazil/Portugal",
+        "ru": "Russia",
+        "zh": "China/Taiwan",
+        "ar": "Middle East/North Africa",
+        "it": "Italy",
+        "nl": "Netherlands",
+        "pl": "Poland",
+        "tr": "Turkey",
+        "vi": "Vietnam",
+        "th": "Thailand",
+        "id": "Indonesia",
+        "ms": "Malaysia",
+        "fil": "Philippines",
+        "fa": "Iran",
+        "he": "Israel",
+        "uk": "Ukraine",
+        "ro": "Romania",
+        "el": "Greece",
+        "hu": "Hungary",
+        "cs": "Czech Republic",
+        "sv": "Sweden",
+        "no": "Norway",
+        "da": "Denmark",
+        "fi": "Finland"
+      }
+    }
+  },
+  "output": {
+    "format": {
+      "json": true,
+      "csv": false,
+      "html": false,
+      "pdf": false,
+      "txt": true,
+      "markdown": false
+    },
+    "directory": "reports",
+    "filename_pattern": "iftube_scan_{video_id}_{timestamp}.{ext}",
+    "timestamp_format": "%Y%m%d_%H%M%S",
+    "table_style": "grid",
+    "max_table_width": 120,
+    "color_output": true,
+    "emoji_enabled": true,
+    "save_thumbnails": false,
+    "thumbnail_directory": "thumbnails",
+    "verbose": true,
+    "quiet_mode": false,
+    "log_level": "INFO"
+  },
+  "logging": {
+    "enabled": true,
+    "file": "iftube.log",
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S",
+    "max_file_size": 10485760,
+    "backup_count": 5,
+    "console_output": true
+  },
+  "advanced": {
+    "yt_dlp": {
+      "extract_flat": true,
+      "no_warnings": true,
+      "quiet": true,
+      "force_generic_extractor": false,
+      "ignore_errors": true,
+      "no_check_certificate": false,
+      "prefer_insecure": false,
+      "proxy": null,
+      "socket_timeout": 30,
+      "retries": 3
+    },
+    "requests": {
+      "max_redirects": 5,
+      "stream": false,
+      "verify": true,
+      "timeout": 30,
+      "cookies": {},
+      "headers": {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+        "Cache-Control": "max-age=0"
+      }
+    },
+    "beautifulsoup": {
+      "parser": "lxml",
+      "preserve_whitespace": false,
+      "decode_entities": true
+    },
+    "cache": {
+      "enabled": true,
+      "type": "memory",
+      "directory": "cache",
+      "max_size": 1000,
+      "ttl": 3600,
+      "cleanup_interval": 86400
+    }
+  },
+  "features": {
+    "interactive_mode": true,
+    "batch_mode": false,
+    "url_list_file": "urls.txt",
+    "auto_save": true,
+    "auto_update": false,
+    "check_updates": true,
+    "update_interval": 86400,
+    "telemetry": false,
+    "analytics": false
+  },
+  "web": {
+    "enabled": false,
+    "host": "127.0.0.1",
+    "port": 5000,
+    "debug": false,
+    "secret_key": "change_this_in_production",
+    "allowed_origins": ["*"],
+    "rate_limit": 100,
+    "rate_limit_period": 60
+  },
+  "gui": {
+    "enabled": false,
+    "theme": "dark",
+    "window_width": 1200,
+    "window_height": 800,
+    "font_family": "Segoe UI",
+    "font_size": 10,
+    "show_thumbnails": true,
+    "auto_refresh": false,
+    "refresh_interval": 300
+  },
+  "security": {
+    "sanitize_input": true,
+    "validate_urls": true,
+    "block_malicious": true,
+    "max_scan_depth": 3,
+    "allowed_domains": [
+      "youtube.com",
+      "youtu.be",
+      "m.youtube.com",
+      "music.youtube.com",
+      "youtube-nocookie.com"
+    ],
+    "blocked_patterns": [
+      "javascript:",
+      "data:",
+      "file:",
+      "ftp:",
+      "gopher:",
+      "telnet:",
+      "ssh:"
+    ]
+  },
+  "export": {
+    "csv": {
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "include_headers": true,
+      "quote_char": "\"",
+      "escape_char": "\\"
+    },
+    "html": {
+      "template": "report_template.html",
+      "css": "style.css",
+      "include_timestamp": true,
+      "responsive": true,
+      "dark_mode": true
+    },
+    "pdf": {
+      "page_size": "A4",
+      "orientation": "portrait",
+      "margin": 20,
+      "font_size": 10,
+      "include_cover": true,
+      "include_toc": false
+    },
+    "markdown": {
+      "toc": true,
+      "code_blocks": true,
+      "tables": true,
+      "emoji": true,
+      "headers": true
+    }
+  },
+  "integration": {
+    "youtube_api": {
+      "enabled": false,
+      "api_key": null,
+      "max_results": 50,
+      "part": ["snippet", "statistics", "contentDetails"],
+      "region_code": "US"
+    },
+    "google_api": {
+      "enabled": false,
+      "client_id": null,
+      "client_secret": null,
+      "refresh_token": null
+    },
+    "db": {
+      "enabled": false,
+      "type": "sqlite",
+      "path": "iftube.db",
+      "host": null,
+      "port": null,
+      "username": null,
+      "password": null,
+      "database": "iftube"
+    },
+    "telegram_bot": {
+      "enabled": false,
+      "token": null,
+      "chat_id": null,
+      "notify_on_scan": true,
+      "notify_on_error": true
+    },
+    "email": {
+      "enabled": false,
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 587,
+      "username": null,
+      "password": null,
+      "from": null,
+      "to": null,
+      "subject": "IFTUBE Scan Report"
+    }
+  },
+  "performance": {
+    "thread_pool": 4,
+    "process_pool": 2,
+    "batch_size": 10,
+    "memory_limit": 512,
+    "cpu_limit": 50,
+    "async_mode": false,
+    "prefetch_pages": 3,
+    "connection_pool_size": 10,
+    "keepalive": 60
+  },
+  "misc": {
+    "temp_dir": "temp",
+    "cleanup_temp": true,
+    "cleanup_interval": 3600,
+    "auto_convert": false,
+    "convert_format": "json",
+    "notify_completion": true,
+    "show_banner": true,
+    "debug_mode": false,
+    "test_mode": false
+  }
+}
